@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\SectionController;
 use Illuminate\Support\Facades\Route;
-use \Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+
 /*
 |--------------------------------------------------------------------------
 | Backend Routes
@@ -25,19 +26,43 @@ Route::group(
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
     ], function(){
 
+
+    //################################ dashboard user ##########################################
     Route::get('/dashboard/user', function () {
         return view('Dashboard.User.dashboard');
     })->middleware(['auth'])->name('dashboard.user');
+    //################################ end dashboard user #####################################
 
+
+
+    //################################ dashboard admin ########################################
     Route::get('/dashboard/admin', function () {
         return view('Dashboard.Admin.dashboard');
     })->middleware(['auth:admin'])->name('dashboard.admin');
+
+    //################################ end dashboard admin #####################################
+
+//---------------------------------------------------------------------------------------------------------------
+
+
+    Route::middleware(['auth:admin'])->
+    prefix('Dashboard')->
+    group(function () {
+
+        //############################# sections route ##########################################
+
+        Route::resource('Sections', SectionController::class);
+
+        //############################# end sections route ######################################
+
+
+    });
+
 
     require __DIR__.'/auth.php';
 
 
 });
-
 
 
 
