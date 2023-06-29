@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\SectionController;
+use App\Http\Controllers\Dashboard\DoctorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -55,6 +56,16 @@ Route::group(
 
         //############################# end sections route ######################################
 
+
+        //############################# Doctors route ##########################################
+
+        Route::resource('Doctors', DoctorController::class);
+        Route::post('update_password', [DoctorController::class, 'update_password'])
+            ->name('update_password');
+        Route::post('update_status', [DoctorController::class, 'update_status'])
+            ->name('update_status');
+
+        //############################# end Doctors route ######################################
 
     });
 
