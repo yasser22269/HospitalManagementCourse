@@ -1,15 +1,15 @@
 <?php
 
-return array (
-    'Close' => 'اغلاق',
-    'Processes' => 'العمليات',
-    'Warning' => 'هل انت متاكد من عملية الحذف ؟',
-    'add_sections' => 'اضافة قسم',
-    'created_at' => 'تاريخ الاضافة',
-    'delete_sections' => 'حذف قسم',
-    'description' => 'الوصف',
-    'edit_sections' => 'تعديل قسم',
-    'name_sections' => 'اسم القسم',
-    'section_doctors' => 'اطباء القسم',
-    'submit' => 'تاكيد',
-);
+return [
+
+   'add_sections'=>'اضافة قسم',
+   'name_sections'=>'اسم القسم',
+    'edit_sections'=>'تعديل قسم',
+    'delete_sections'=>'حذف قسم',
+   'created_at'=>'تاريخ الاضافة',
+   'Processes'=>'العمليات',
+   'submit'=>'تاكيد',
+   'Close'=>'اغلاق',
+   'Warning'=>'هل انت متاكد من عملية الحذف ؟',
+
+];

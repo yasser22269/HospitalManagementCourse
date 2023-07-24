@@ -2,7 +2,7 @@
 
 return [
 
-     'Main'=>'Hospital management',
+     'Main'=>'Hospital management software',
      'index'=>'Home',
      'sections'=>'Sections',
 

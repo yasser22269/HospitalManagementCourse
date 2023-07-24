@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\Dashboard\DashboardController;
-use App\Http\Controllers\Dashboard\SectionController;
 use App\Http\Controllers\Dashboard\DoctorController;
+use App\Http\Controllers\Dashboard\SectionController;
+use App\Http\Controllers\Dashboard\SingleServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,6 +44,9 @@ Route::group(
 
     //################################ end dashboard admin #####################################
 
+
+
+
 //---------------------------------------------------------------------------------------------------------------
 
 
@@ -66,6 +70,13 @@ Route::group(
             ->name('update_status');
 
         //############################# end Doctors route ######################################
+
+
+        //############################# sections route ##########################################
+
+        Route::resource('Service', SingleServiceController::class);
+
+        //############################# end sections route ######################################
 
     });
 
