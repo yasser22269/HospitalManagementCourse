@@ -15,5 +15,14 @@ class DoctorSeeder extends Seeder
     public function run()
     {
         Doctor::factory()->count(30)->create();
+
+        //        $Appointments = Appointment::all();
+//       foreach ($doctors as $doctor){
+//           $Appointments = Appointment::all()->random()->id;
+//            $doctor->doctorappointments()->attach($Appointments);
+//        }
+//
+
+
     }
 }
