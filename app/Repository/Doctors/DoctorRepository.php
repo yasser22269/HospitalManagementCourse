@@ -3,6 +3,7 @@ namespace App\Repository\Doctors;
 
 use App\Interfaces\Doctors\DoctorRepositoryInterface;
 //use App\Models\Appointment;
+use App\Models\Appointment;
 use App\Models\Doctor;
 use App\Models\Image;
 use App\Models\Section;
@@ -26,8 +27,7 @@ class DoctorRepository implements DoctorRepositoryInterface
     public function create()
     {
         $sections = Section::all();
-//        $appointments = Appointment::all();
-        $appointments = [];
+        $appointments = Appointment::all();
         return view('Dashboard.Doctors.add',compact('sections','appointments'));
     }
 
@@ -51,7 +51,7 @@ class DoctorRepository implements DoctorRepositoryInterface
             $doctors->save();
 
             // insert pivot tABLE
-           // $doctors->doctorappointments()->attach($request->appointments);
+            $doctors->doctorappointments()->attach($request->appointments);
 
 
             //Upload img
@@ -89,7 +89,7 @@ class DoctorRepository implements DoctorRepositoryInterface
             $doctor->save();
 
             // update pivot tABLE
-           // $doctor->doctorappointments()->sync($request->appointments);
+            $doctor->doctorappointments()->sync($request->appointments);
 
             // update photo
             if ($request->has('photo')){
@@ -158,8 +158,7 @@ class DoctorRepository implements DoctorRepositoryInterface
     public function edit($id)
     {
         $sections = Section::all();
-        //$appointments = Appointment::all();
-        $appointments = [];
+        $appointments = Appointment::all();
         $doctor = Doctor::findorfail($id);
         return view('Dashboard.Doctors.edit',compact('sections','appointments','doctor'));
     }
