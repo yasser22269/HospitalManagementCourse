@@ -22,6 +22,8 @@ class CreateSectionTranslationsTable extends Migration
             $table->unique(['section_id', 'locale']);
             $table->foreign('section_id')->references('id')->on('sections')->onDelete('cascade');
 
+            $table->longText('description');
+
             // fields you want to translate
             $table->string('name');
         });

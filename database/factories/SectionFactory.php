@@ -23,7 +23,7 @@ class SectionFactory extends Factory
                     'قسم الجراحة','قسم الاطفال',
                     'قسم النساء والتوليد',
                     'قسم العيون','قسم الباطنة']),
-          //  'description'=>$this->faker->paragraph
+            'description'=>$this->faker->paragraph
         ];
     }
 }
