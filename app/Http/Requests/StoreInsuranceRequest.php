@@ -27,7 +27,8 @@ class StoreInsuranceRequest extends FormRequest
             'insurance_code' => 'required',
             'discount_percentage' =>'required|numeric',
             'Company_rate' =>'required|numeric',
-            'name' => 'required|unique:insurance_translations,name,'.$this->id,
+            'name' => 'required|unique:insurance_translations,name,'.$this->id .',insurance_id',
+            //.',insurance_id'
         ];
     }
 
