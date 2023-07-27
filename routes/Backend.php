@@ -78,6 +78,13 @@ Route::group(
 
         //############################# end sections route ######################################
 
+
+        //############################# GroupServices route ##########################################
+
+        Route::view('Add_GroupServices','livewire.GroupServices.include_create')->name('Add_GroupServices');
+
+        //############################# end GroupServices route ######################################
+
     });
 
 
