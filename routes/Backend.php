@@ -6,6 +6,7 @@ use App\Http\Controllers\Dashboard\SectionController;
 use App\Http\Controllers\Dashboard\SingleServiceController;
 use App\Http\Controllers\Dashboard\InsuranceController;
 use App\Http\Controllers\Dashboard\AmbulanceController;
+use App\Http\Controllers\Dashboard\PatientController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -101,6 +102,12 @@ Route::group(
 
         //############################# end Ambulance route ######################################
 
+
+        //############################# Ambulance route ##########################################
+
+        Route::resource('Patients', PatientController::class);
+
+        //############################# end Ambulance route ######################################
 
     });
 
